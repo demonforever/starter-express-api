@@ -31,10 +31,10 @@ const Healthdata = mongoose.model("Healthdata", healthdata);
 app.get("/update", async (req, res) => {
   try {
     const data = {
-      MQ2: req.body.MQ2,
-      MQ5: req.body.MQ5,
-      MQ6: req.body.MQ6,
-      MQ7: req.body.MQ7,      
+      MQ2: req.query.MQ2,
+      MQ5: req.query.MQ5,
+      MQ6: req.query.MQ6,
+      MQ7: req.query.MQ7,      
     };
     await Healthdata.create(data);
     res.json(data);
